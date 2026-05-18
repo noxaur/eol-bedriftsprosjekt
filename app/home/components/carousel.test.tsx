@@ -15,28 +15,20 @@ describe("Carousel", () => {
     expect(screen.getByAltText("Slide 5")).toBeInTheDocument();
   });
 
-  it("shows only one centered image at a time by constraining container width", () => {
-    const { container } = render(<Carousel />);
-    const outer = container.firstChild as HTMLElement;
-    expect(outer.className).toContain("overflow-hidden");
-    expect(outer.className).toContain("w-[382px]");
-    expect(outer.className).toContain("mx-auto");
+  it("shows the slide counter", () => {
+    render(<Carousel />);
+    expect(screen.getByText(/Image 1 of 5/)).toBeInTheDocument();
   });
 
-  it("prevents images from shrinking below carousel width", () => {
+  it("renders navigation buttons", () => {
     render(<Carousel />);
-    const images = screen.getAllByRole("img");
-    images.forEach((img) => {
-      expect(img.className).toContain("shrink-0");
-      expect(img.className).toContain("w-[382px]");
-      expect(img.className).toContain("h-[255px]");
-    });
+    expect(screen.getByRole("button", { name: /previous/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /next/i })).toBeInTheDocument();
   });
 
   it("applies transition to the inner track for auto-swap", () => {
     const { container } = render(<Carousel />);
-    const outer = container.firstChild as HTMLElement;
-    const inner = outer.firstChild as HTMLElement;
-    expect(inner.className).toContain("transition-transform");
+    const innerTrack = container.querySelector('.transition-transform');
+    expect(innerTrack).toBeTruthy();
   });
 });

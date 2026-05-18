@@ -8,10 +8,6 @@ const slides = [
   { src: "/images/carousel-5.png", alt: "Slide 5" },
 ];
 
-const SLIDE_WIDTH = 382;
-const GAP = 23;
-const STEP = SLIDE_WIDTH + GAP;
-
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
@@ -22,21 +18,65 @@ export default function Carousel() {
     return () => clearInterval(timer);
   }, []);
 
+  const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
+
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
-      <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * STEP}px)` }}
-      >
-        {slides.map((slide) => (
-          <img
-            key={slide.alt}
-            src={slide.src}
-            alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
-          />
-        ))}
+    <section className="mx-auto w-full max-w-3xl px-4">
+      <div className="retro-box p-3">
+        <div className="mb-2 flex items-center justify-between font-body text-xs text-font-muted">
+          <span>SOFTWARE SHOWCASE</span>
+          <span>
+            Image {current + 1} of {slides.length}
+          </span>
+        </div>
+        <div className="retro-box-inset overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {slides.map((slide) => (
+              <img
+                key={slide.alt}
+                src={slide.src}
+                alt={slide.alt}
+                className="w-full shrink-0 object-cover"
+                style={{ aspectRatio: "382/255" }}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="mt-2 flex items-center justify-between">
+          <button
+            onClick={goPrev}
+            aria-label="Previous slide"
+            className="retro-btn-outline px-3 py-1 text-sm"
+          >
+            {"<<"}
+          </button>
+          <div className="flex gap-1">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-3 w-3 border ${
+                  i === current
+                    ? "bg-retro-blue border-retro-blue"
+                    : "bg-retro-white border-retro-border"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={goNext}
+            aria-label="Next slide"
+            className="retro-btn-outline px-3 py-1 text-sm"
+          >
+            {">>"}
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
