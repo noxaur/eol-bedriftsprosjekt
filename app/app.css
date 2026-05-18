@@ -19,10 +19,15 @@
   --color-green-normal: #39B54A;
   --color-green-dark: #2B8838;
   --color-green-darker: #143F1A;
+  --color-green-darkest: #0A1F0D;
   --color-green-light-active: #C2E8C7;
   --color-grey-300: #2A2D2A;
   --color-font-dark: #0C0E0C;
   --color-font-muted: #303230;
+  --color-accent-warm: #E85D26;
+  --color-accent-deep: #4A1942;
+  --color-accent-gold: #D4A843;
+  --color-accent-coral: #FF6B4A;
 }
 
 @layer base {
@@ -32,7 +37,7 @@
 
   html,
   body {
-    @apply bg-white dark:bg-gray-950;
+    @apply bg-green-darkest text-green-light;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -54,4 +59,59 @@
 .animate-marquee {
   animation: marquee 10s linear infinite;
   will-change: transform;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--color-green-normal) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pattern-dots-sm {
+  background-image: radial-gradient(circle, var(--color-accent-gold) 0.8px, transparent 0.8px);
+  background-size: 16px 16px;
+}
+
+.pattern-diagonal {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    var(--color-green-normal) 8px,
+    var(--color-green-normal) 9px
+  );
+}
+
+.pattern-crosshatch {
+  background-image:
+    linear-gradient(var(--color-green-normal) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-green-normal) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.pattern-circles {
+  background-image: radial-gradient(circle, var(--color-accent-warm) 2px, transparent 2px);
+  background-size: 40px 40px;
 }
