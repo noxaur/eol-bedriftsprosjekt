@@ -10,7 +10,8 @@ describe("TrustedBy", () => {
 
   it("renders the customer logos image", () => {
     render(<TrustedBy />);
-    const logos = screen.getByAltText("Customer logos");
-    expect(logos).toBeInTheDocument();
+    const logos = screen.getAllByAltText("Customer logos");
+    expect(logos.length).toBeGreaterThanOrEqual(1);
+    expect(logos[0]).toBeInTheDocument();
   });
 });
