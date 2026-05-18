@@ -1,32 +1,69 @@
-export default function Faq() {
+import { useState } from "react";
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const faqItems: FaqItem[] = [
+  {
+    question: "What software do you maintain?",
+    answer: "We maintain legacy enterprise systems that other vendors have abandoned. COBOL, Delphi, VB6, you name it. If it runs, we keep it running.",
+  },
+  {
+    question: "How long have you been doing this?",
+    answer: "Since 1997. We've seen every Y2K patch, every millennium bug, every 'this system will be replaced next year' that never happened.",
+  },
+  {
+    question: "Can you really still support our 1998 system?",
+    answer: "Absolutely. We've got engineers who remember when 'the cloud' was just weather. Your old system is our bread and butter.",
+  },
+];
+
+function FaqItem({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boolean; onToggle: () => void }) {
   return (
-    <section className="relative mx-auto flex w-full max-w-[382px] flex-col items-center gap-[15px] rounded-[5px] py-[30px] overflow-hidden">
-      {/* Bold background with pattern */}
-      <div className="absolute inset-0 bg-green-darker" />
-      <div className="absolute inset-0 pattern-dots-sm opacity-[0.08]" />
+    <div className="border-b border-retro-border last:border-b-0">
+      <button
+        onClick={onToggle}
+        className="flex w-full items-center justify-between px-4 py-3 text-left font-body text-base font-bold hover:bg-retro-bg"
+        aria-expanded={isOpen}
+      >
+        <span>
+          <span className="text-retro-blue">{isOpen ? "[-]" : "[+]"}</span>{" "}
+          {item.question}
+        </span>
+      </button>
+      {isOpen && (
+        <div className="border-t border-retro-border bg-retro-bg px-4 py-3 font-body text-sm text-font-muted">
+          {item.answer}
+        </div>
+      )}
+    </div>
+  );
+}
 
-      {/* Geometric accent shapes */}
-      <div className="absolute top-[-20px] right-[20px] w-[60px] h-[60px] border-2 border-accent-warm/30 rotate-12" />
-      <div className="absolute bottom-[-15px] left-[30px] w-[50px] h-[50px] bg-accent-gold/10 rounded-full" />
-      <div className="absolute top-[50%] left-[-10px] w-[20px] h-[20px] bg-green-normal/20 rotate-45" />
+export default function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-      {/* Accent stripe at top */}
-      <div className="absolute top-0 left-[20%] right-[20%] h-[3px] bg-gradient-to-r from-transparent via-accent-warm to-transparent" />
-
-      <div className="relative">
-        <h2 className="w-full text-center px-[20px] font-heading-condensed text-[clamp(26px,7.5vw,32px)] font-bold uppercase tracking-wide text-green-light">
-          Frequently asked questions
-        </h2>
-        {/* Underline */}
-        <div className="mx-auto mt-2 w-[80px] h-[2px] bg-gradient-to-r from-accent-warm to-accent-gold" />
+  return (
+    <section className="mx-auto w-full max-w-3xl px-4">
+      <div className="retro-box">
+        <div className="border-b-2 border-retro-border bg-retro-yellow px-4 py-3 text-center">
+          <h2 className="font-heading text-section-heading font-bold text-font-dark">
+            ★ FREQUENTLY ASKED QUESTIONS ★
+          </h2>
+        </div>
+        <div>
+          {faqItems.map((item, i) => (
+            <FaqItem
+              key={i}
+              item={item}
+              isOpen={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+            />
+          ))}
+        </div>
       </div>
-
-      <p className="relative w-[329.95px] text-center font-body text-base leading-relaxed text-green-light/70">
-        daskjdaksdabsdkbajsdaas asdasdasdas dasdasdasdasdas dasdadasdasdadasd apsidhu9asdfgbhuiabfgipbdfag dasfg ds fgs dfg sdfg
-      </p>
-
-      {/* Bottom accent stripe */}
-      <div className="absolute bottom-0 left-[30%] right-[30%] h-[3px] bg-gradient-to-r from-transparent via-accent-gold to-transparent" />
     </section>
   );
 }

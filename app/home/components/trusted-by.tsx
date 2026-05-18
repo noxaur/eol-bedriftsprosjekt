@@ -1,32 +1,30 @@
 export default function TrustedBy() {
   return (
-    <section className="flex flex-col items-center gap-[18px] py-6">
-      <div className="relative">
-        <h2 className="font-heading-condensed text-[clamp(28px,8vw,36px)] font-bold uppercase tracking-wider text-green-light">
-          Trusted by
-        </h2>
-        {/* Underline accent */}
-        <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-warm via-accent-gold to-accent-warm opacity-60" />
-      </div>
-      <div className="relative w-full overflow-hidden py-4">
-        {/* Pattern backdrop */}
-        <div className="absolute inset-0 pattern-dots opacity-[0.05]" />
-        <div className="relative flex animate-marquee items-center gap-[40px]">
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0 opacity-70"
-          />
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0 opacity-70"
-          />
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0 opacity-70"
-          />
+    <section className="mx-auto w-full max-w-3xl px-4">
+      <div className="retro-box">
+        <div className="bg-retro-blue px-3 py-2 text-center font-heading text-section-heading font-bold text-retro-white">
+          TRUSTED BY
+        </div>
+        <div className="border-t-2 border-retro-border p-4">
+          <div className="relative w-full overflow-hidden">
+            <div className="flex animate-marquee items-center gap-[40px]">
+              <img
+                src="/images/customer-logos.svg"
+                alt="Customer logos"
+                className="h-6 w-[924px] shrink-0"
+              />
+              <img
+                src="/images/customer-logos.svg"
+                alt="Customer logos"
+                className="h-6 w-[924px] shrink-0"
+              />
+              <img
+                src="/images/customer-logos.svg"
+                alt="Customer logos"
+                className="h-6 w-[924px] shrink-0"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -8,12 +8,12 @@ describe("Header", () => {
     expect(screen.getByText("ReOL")).toBeInTheDocument();
   });
 
-  it("renders the 'Maintained software' pill button", () => {
+  it("renders the 'Maintained Software' badge", () => {
     render(<Header />);
-    expect(screen.getByText("Maintained software")).toBeInTheDocument();
+    expect(screen.getByText("Maintained Software")).toBeInTheDocument();
   });
 
-  it("renders the hamburger menu button", () => {
+  it("renders the [MENU] button", () => {
     render(<Header />);
     expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
   });
