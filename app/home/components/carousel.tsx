@@ -23,18 +23,22 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
+    <div className="relative mx-auto w-[382px] overflow-hidden">
       <div
         className="flex gap-[23px] transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${current * STEP}px)` }}
       >
         {slides.map((slide) => (
-          <img
-            key={slide.alt}
-            src={slide.src}
-            alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
-          />
+          <div key={slide.alt} className="relative shrink-0">
+            <div className="absolute -inset-1 rounded-lg bg-noir-glow blur-md" />
+            <div className="relative overflow-hidden rounded-lg border border-noir-border bg-noir-surface p-1">
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                className="h-[255px] w-[382px] shrink-0 rounded object-cover"
+              />
+            </div>
+          </div>
         ))}
       </div>
     </div>

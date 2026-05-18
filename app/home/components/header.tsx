@@ -4,8 +4,8 @@ interface HeaderProps {
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-[10px] py-[2px] bg-green-light">
-      <div className="flex items-center gap-[6.71px]">
+    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-noir-border bg-noir-bg/80 px-6 py-4 backdrop-blur-sm">
+      <div className="flex items-center gap-3">
         <div className="relative" style={{ width: 51, height: 67.11 }}>
           <img
             src="/images/logo-icon.svg"
@@ -20,23 +20,23 @@ export default function Header({ onMenuToggle }: HeaderProps) {
             style={{ width: 20.13, height: 20.13, left: 15.43, top: 23.49 }}
           />
           <span
-            className="absolute font-logo text-logo-sm leading-none text-black"
+            className="absolute font-logo text-logo-sm leading-none text-noir-text"
             style={{ left: 12.92, top: 52.3 }}
           >
             ReOL
           </span>
         </div>
       </div>
-      <div className="flex items-center gap-[9px]">
-        <span className="rounded-[5px] bg-green-normal px-[10px] py-[5px] font-body text-xs text-[#EBF8ED]">
+      <div className="flex items-center gap-3">
+        <span className="rounded-full border border-noir-accent/30 bg-noir-accent/10 px-3 py-1 font-body text-xs tracking-wide text-noir-accent">
           Maintained software
         </span>
         <button
           onClick={onMenuToggle}
           aria-label="Toggle menu"
-          className="flex h-8 w-8 items-center justify-center"
+          className="group flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-noir-surface-elevated"
         >
-          <img src="/images/hamburger.svg" alt="" className="h-8 w-8" />
+          <img src="/images/hamburger.svg" alt="" className="h-5 w-5 opacity-70 transition-opacity group-hover:opacity-100" />
         </button>
       </div>
     </header>
