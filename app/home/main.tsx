@@ -8,7 +8,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-green-light">
       <Header />
-      <main className="flex flex-col items-center gap-[18px] px-7">
+      <main className="flex flex-col items-center gap-[18px]">
         <Carousel />
         <TrustedBy />
         <ButtonPair />
