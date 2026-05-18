@@ -15,6 +15,7 @@
   --color-green-light-active: #C2E8C7;
   --color-grey-300: #2A2D2A;
   --color-font-dark: #0C0E0C;
+  --color-font-muted: #303230;
 }
 
 @layer base {
