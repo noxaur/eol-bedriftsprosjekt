@@ -28,6 +28,7 @@ Set up the test infrastructure (Vitest + React Testing Library), brand theme tok
 | `--color-green-light-active` | `#C2E8C7` | Active/hover states |
 | `--color-grey-300` | `#2A2D2A` | Customer logos |
 | `--color-font-dark` | `#0C0E0C` | Dark text |
+| `--font-heading-condensed` | `"Roboto Condensed", sans-serif` | Condensed heading text |
 
 ## Implementation
 
@@ -89,7 +90,7 @@ import "@testing-library/jest-dom";
   --font-heading: "DM Serif Display", serif;
   --font-logo: "Special Gothic Expanded One", sans-serif;
   --font-body: "Roboto", sans-serif;
-  --font-card: "DM Sans", sans-serif;
+  --font-heading-condensed: "Roboto Condensed", sans-serif;
 
   --color-green-light: #F5F9EB;
   --color-green-normal: #39B54A;
@@ -103,6 +104,17 @@ import "@testing-library/jest-dom";
 @layer base {
   html {
     font-family: var(--font-sans);
+  }
+
+  html,
+  body {
+    @apply bg-white dark:bg-gray-950;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
   }
 }
 ```
@@ -121,7 +133,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&family=Special+Gothic+Expanded+One&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Serif+Display&family=Roboto:wght@400;500;700&family=Special+Gothic+Expanded+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap",
   },
 ];
 ```

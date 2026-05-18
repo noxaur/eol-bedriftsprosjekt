@@ -11,10 +11,10 @@ An "About" text section with the headline "Maintaining _EOL_ software" (where "E
 
 ## Figma reference
 
-- Heading: DM Serif Display, 29px
-  - "Maintaining" — color `#132113`
-  - "EOL" — color `#2B8838`, italic
-  - "software" — color `#1E1E1E`
+- Heading: DM Serif Display, 28px, base color `#2B8838`
+  - "Maintaining" — Roboto Bold
+  - "EOL" — Roboto Condensed Bold Italic, `#1F211F`
+  - "software" — Roboto Bold
 - Body: Roboto, 14px, `#143F1A`
 - Container: 330px wide
 
@@ -63,10 +63,10 @@ Expected: FAIL — module not found.
 export default function AboutSection() {
   return (
     <section className="mx-auto w-[330px]">
-      <h2 className="font-heading text-[29px] leading-tight">
-        <span style={{ color: "#132113" }}>Maintaining</span>{" "}
-        <span className="italic" style={{ color: "#2B8838" }}>EOL</span>{" "}
-        <span style={{ color: "#1E1E1E" }}>software</span>
+      <h2 className="font-heading text-[28px] leading-tight text-green-dark">
+        <span className="font-body font-bold">Maintaining</span>{" "}
+        <span className="font-heading-condensed font-bold italic" style={{ color: "#1F211F" }}>EOL</span>{" "}
+        <span className="font-body font-bold">software</span>
       </h2>
       <div className="mt-6 flex flex-col gap-[10px]">
         <p className="font-body text-sm leading-relaxed text-green-darker">
