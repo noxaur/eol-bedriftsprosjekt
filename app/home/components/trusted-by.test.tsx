@@ -3,15 +3,14 @@ import { describe, it, expect } from "vitest";
 import TrustedBy from "./trusted-by";
 
 describe("TrustedBy", () => {
-  it("renders the 'Trusted by' heading", () => {
+  it("renders the 'Trusted by' label", () => {
     render(<TrustedBy />);
     expect(screen.getByText("Trusted by")).toBeInTheDocument();
   });
 
-  it("renders the customer logos image", () => {
+  it("renders customer logos", () => {
     render(<TrustedBy />);
     const logos = screen.getAllByAltText("Customer logos");
-    expect(logos.length).toBeGreaterThanOrEqual(1);
-    expect(logos[0]).toBeInTheDocument();
+    expect(logos.length).toBe(3);
   });
 });

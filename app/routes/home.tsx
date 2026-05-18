@@ -3,8 +3,8 @@ import LandingPage from "../home/main";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "EOL — Maintained Software" },
+    { name: "description", content: "Software that lasts. Built for companies who value stability over hype." },
   ];
 }
 

@@ -5,15 +5,15 @@ import Header from "./header";
 describe("Header", () => {
   it("renders the logo text", () => {
     render(<Header />);
-    expect(screen.getByText("ReOL")).toBeInTheDocument();
+    expect(screen.getByText("EOL")).toBeInTheDocument();
   });
 
-  it("renders the 'Maintained software' pill button", () => {
+  it("renders the 'Maintained software' label on desktop", () => {
     render(<Header />);
     expect(screen.getByText("Maintained software")).toBeInTheDocument();
   });
 
-  it("renders the hamburger menu button", () => {
+  it("renders the menu toggle button", () => {
     render(<Header />);
     expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
   });
