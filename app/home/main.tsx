@@ -2,6 +2,7 @@ import Header from "./components/header";
 import Carousel from "./components/carousel";
 import TrustedBy from "./components/trusted-by";
 import ButtonPair from "./components/button-pair";
+import InfoCard from "./components/info-card";
 
 function LandingPage() {
   return (
@@ -11,6 +12,10 @@ function LandingPage() {
         <Carousel />
         <TrustedBy />
         <ButtonPair />
+        <InfoCard
+          title="FAQ"
+          body="Find answers to common questions about our EOL software maintenance services, support plans, and how we help extend the life of your legacy systems."
+        />
       </main>
     </div>
   );
