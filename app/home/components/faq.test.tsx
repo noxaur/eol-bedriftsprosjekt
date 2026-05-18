@@ -8,10 +8,9 @@ describe("Faq", () => {
     expect(screen.getByText("Frequently asked questions")).toBeInTheDocument();
   });
 
-  it("renders the body text", () => {
+  it("renders FAQ items", () => {
     render(<Faq />);
-    expect(
-      screen.getByText(/daskjdaksdabsdkbajsdaas/),
-    ).toBeInTheDocument();
+    expect(screen.getByText("What does maintained software mean?")).toBeInTheDocument();
+    expect(screen.getByText("How is this different from agencies?")).toBeInTheDocument();
   });
 });
