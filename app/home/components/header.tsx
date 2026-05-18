@@ -29,7 +29,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <span className="rounded-sm bg-terracotta/10 px-3 py-1.5 font-body text-xs font-medium tracking-wide uppercase text-terracotta-dark">
+          <span className="rounded-sm bg-terracotta/10 px-3 py-1.5 font-body text-xs text-terracotta-dark">
             Maintained software
           </span>
           <button

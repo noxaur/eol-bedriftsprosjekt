@@ -3,9 +3,9 @@ import { describe, it, expect } from "vitest";
 import TrustedBy from "./trusted-by";
 
 describe("TrustedBy", () => {
-  it("renders the 'Trusted by' heading", () => {
+  it("renders the customer trust heading", () => {
     render(<TrustedBy />);
-    expect(screen.getByText("Trusted by")).toBeInTheDocument();
+    expect(screen.getByText(/Used by organizations/)).toBeInTheDocument();
   });
 
   it("renders the customer logos image", () => {

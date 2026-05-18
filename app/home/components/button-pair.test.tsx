@@ -13,9 +13,9 @@ describe("ButtonPair", () => {
     expect(screen.getByText("Read more")).toBeInTheDocument();
   });
 
-  it("renders an arrow icon inside Contact sales button", () => {
+  it("renders an arrow icon inside Read more button", () => {
     render(<ButtonPair />);
-    const contactSales = screen.getByRole("button", { name: /contact sales/i });
-    expect(contactSales.querySelector("svg")).toBeTruthy();
+    const readMore = screen.getByRole("button", { name: /read more/i });
+    expect(readMore.querySelector("svg")).toBeTruthy();
   });
 });
