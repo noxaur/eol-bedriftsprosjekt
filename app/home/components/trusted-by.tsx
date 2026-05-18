@@ -1,26 +1,28 @@
 export default function TrustedBy() {
   return (
-    <section className="flex flex-col items-center gap-[22px] pt-[25px]">
-      <h2 className="font-body text-section-heading font-bold text-green-dark">
-        Trusted by
-      </h2>
-      <div className="relative w-full overflow-hidden">
-        <div className="flex animate-marquee items-center gap-[40px]">
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
-          />
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
-          />
-          <img
-            src="/images/customer-logos.svg"
-            alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
-          />
+    <section className="py-12">
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-8 gap-4">
+        <h2 className="font-heading-condensed text-sm font-semibold tracking-widest uppercase text-charcoal-light shrink-0">
+          Trusted by
+        </h2>
+        <div className="flex-1 relative overflow-hidden">
+          <div className="flex animate-marquee items-center gap-10 opacity-60">
+            <img
+              src="/images/customer-logos.svg"
+              alt="Customer logos"
+              className="h-6 w-[924px] shrink-0"
+            />
+            <img
+              src="/images/customer-logos.svg"
+              alt="Customer logos"
+              className="h-6 w-[924px] shrink-0"
+            />
+            <img
+              src="/images/customer-logos.svg"
+              alt="Customer logos"
+              className="h-6 w-[924px] shrink-0"
+            />
+          </div>
         </div>
       </div>
     </section>

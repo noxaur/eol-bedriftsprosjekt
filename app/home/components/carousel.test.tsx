@@ -15,21 +15,19 @@ describe("Carousel", () => {
     expect(screen.getByAltText("Slide 5")).toBeInTheDocument();
   });
 
-  it("shows only one centered image at a time by constraining container width", () => {
+  it("shows only one image at a time by constraining container", () => {
     const { container } = render(<Carousel />);
     const outer = container.firstChild as HTMLElement;
     expect(outer.className).toContain("overflow-hidden");
-    expect(outer.className).toContain("w-[382px]");
-    expect(outer.className).toContain("mx-auto");
+    expect(outer.className).toContain("w-full");
   });
 
-  it("prevents images from shrinking below carousel width", () => {
+  it("prevents images from shrinking", () => {
     render(<Carousel />);
     const images = screen.getAllByRole("img");
     images.forEach((img) => {
       expect(img.className).toContain("shrink-0");
-      expect(img.className).toContain("w-[382px]");
-      expect(img.className).toContain("h-[255px]");
+      expect(img.className).toContain("w-full");
     });
   });
 

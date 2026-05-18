@@ -8,10 +8,6 @@ const slides = [
   { src: "/images/carousel-5.png", alt: "Slide 5" },
 ];
 
-const SLIDE_WIDTH = 382;
-const GAP = 23;
-const STEP = SLIDE_WIDTH + GAP;
-
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
@@ -23,17 +19,31 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
+    <div className="w-full overflow-hidden rounded-sm">
       <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * STEP}px)` }}
+        className="flex transition-transform duration-700 ease-out-expo"
+        style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((slide) => (
           <img
             key={slide.alt}
             src={slide.src}
             alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
+            className="w-full shrink-0 object-cover aspect-[4/3]"
+          />
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 mt-4">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === current
+                ? "w-8 bg-terracotta"
+                : "w-1.5 bg-cream-deeper hover:bg-terracotta-light"
+            }`}
+            onClick={() => setCurrent(i)}
           />
         ))}
       </div>
