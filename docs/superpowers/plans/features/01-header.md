@@ -1,5 +1,7 @@
 # 01 — Header Component
 
+> **Before starting:** Invoke the `using-superpowers` skill first.
+>
 > **Branch:** `feature/header`
 > **Dependencies:** 00-setup must be merged first (needs theme tokens + fonts + test infra)
 
@@ -65,29 +67,19 @@ export default function Header({ onMenuToggle }: HeaderProps) {
   return (
     <header className="flex items-center justify-between px-[10px] py-[2px] bg-green-light">
       <div className="flex items-center gap-[6.71px]">
-        <div className="relative" style={{ width: 51, height: 67.11 }}>
-          <img
-            src="/images/logo-icon.svg"
-            alt=""
-            className="absolute"
-            style={{ width: 48.28, height: 63.56, left: 1.36, top: 2.65 }}
-          />
-          <img
-            src="/images/logo-image.png"
-            alt=""
-            className="absolute"
-            style={{ width: 20.13, height: 20.13, left: 15.43, top: 23.49 }}
-          />
-          <span
-            className="absolute font-logo text-[10.07px] leading-none text-black"
-            style={{ left: 12.92, top: 52.3 }}
-          >
-            ReOL
-          </span>
-        </div>
+        <img
+          src="/images/logo-image.png"
+          alt="ReOL"
+          className="h-[67px] w-auto"
+        />
+        <img
+          src="/images/logo-icon.svg"
+          alt=""
+          className="h-16 w-auto"
+        />
       </div>
       <div className="flex items-center gap-[9px]">
-        <span className="rounded-[5px] bg-green-normal px-[10px] py-[5px] font-body text-xs text-[#EBF8ED]">
+        <span className="rounded-[5px] bg-green-normal px-[10px] py-[5px] font-body text-xs text-green-light">
           Maintained software
         </span>
         <button

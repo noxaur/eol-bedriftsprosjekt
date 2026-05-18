@@ -1,5 +1,7 @@
 # 00 — Project Setup
 
+> **Before starting:** Invoke the `using-superpowers` skill first.
+>
 > **Branch:** `feature/setup`
 > **Dependencies:** none (can be done first)
 
@@ -37,7 +39,7 @@ npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
 
 ### Step 2: Update vite.config.ts
 
-Replace the entire file with this:
+Replace the entire file with:
 
 ```ts
 import { reactRouter } from "@react-router/dev/vite";
@@ -45,7 +47,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  plugins: [tailwindcss(), process.env.VITEST ? undefined : reactRouter()].filter(Boolean),
+  plugins: [tailwindcss(), reactRouter()],
   resolve: {
     tsconfigPaths: true,
   },
@@ -53,17 +55,14 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./app/test/setup.ts"],
     globals: true,
-    passWithNoTests: true,
   },
 });
 ```
 
-> Note: `defineConfig` is imported from `vitest/config` not `vite` for combined Vite + Vitest types.
-
 ### Step 3: Create app/test/setup.ts
 
 ```ts
-import "@testing-library/jest-dom/vitest";
+import "@testing-library/jest-dom";
 ```
 
 ### Step 4: Add test scripts to package.json
@@ -105,25 +104,12 @@ import "@testing-library/jest-dom/vitest";
   html {
     font-family: var(--font-sans);
   }
-
-  html,
-  body {
-    @apply bg-white dark:bg-gray-950;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
-  }
 }
 ```
 
 Remove the old `html, body` block — the base layer replaces it.
 
 ### Step 6: Update app/root.tsx Google Fonts link
-
-Add the new fonts to the existing stylesheet URL:
 
 ```tsx
 export const links: Route.LinksFunction = () => [
