@@ -39,6 +39,7 @@ This project follows disciplined engineering practices. All agentic work **must*
 - `figma` MCP — fetch Figma design data during component implementation to match pixel-perfect specs
 - `webapp-testing` — visually verify components in a browser against Figma design
 - **PR screenshots** — before completing a PR, take a pre-screenshot and post-screenshot, attach both to the PR. See `docs/agents/pr-screenshots.md`.
+- **Animated changes** — if the work involves on-screen movement (animations, carousels, transitions, marquee), capture it as a GIF, MP4, or WebM instead of a static screenshot. Use Chrome DevTools MCP `take_screenshot` for static frames or screen recording tools for motion.
 
 ## Agent skills
 
