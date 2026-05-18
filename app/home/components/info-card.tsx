@@ -6,7 +6,7 @@ interface InfoCardProps {
 export default function InfoCard({ title, body }: InfoCardProps) {
   return (
     <div className="relative mx-auto h-[389px] w-[382px] bg-green-light-active">
-      <h3 className="absolute left-[82px] top-[31px] font-heading text-[29px] text-font-dark">
+      <h3 className="absolute left-[82px] top-[31px] font-heading text-heading-lg text-font-dark">
         {title}
       </h3>
 

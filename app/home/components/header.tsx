@@ -20,7 +20,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
             style={{ width: 20.13, height: 20.13, left: 15.43, top: 23.49 }}
           />
           <span
-            className="absolute font-logo text-[10.07px] leading-none text-black"
+            className="absolute font-logo text-logo-sm leading-none text-black"
             style={{ left: 12.92, top: 52.3 }}
           >
             ReOL
