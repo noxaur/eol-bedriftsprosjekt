@@ -16,14 +16,14 @@
   --text-section-heading: clamp(24px, 7.5vw, 26px);
   --text-display: clamp(36px, 10vw, 56px);
 
-  --color-yellow-accent: #FFE500;
-  --color-yellow-dark: #E6CF00;
+  --color-yellow-accent: oklch(90% 0.16 95);
+  --color-yellow-dark: oklch(82% 0.14 90);
   --color-green-normal: #39B54A;
   --color-green-dark: #2B8838;
   --color-green-darker: #143F1A;
-  --color-black: #1A1A1A;
-  --color-white: #FAFAFA;
-  --color-border: #1A1A1A;
+  --color-black: oklch(15% 0.008 145);
+  --color-white: oklch(98% 0.003 145);
+  --color-border: oklch(15% 0.008 145);
 }
 
 @layer base {
@@ -51,14 +51,18 @@
   will-change: transform;
 }
 
+.ease-brutalist {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .brutalist-shadow {
-  box-shadow: 4px 4px 0px 0px #1A1A1A;
+  box-shadow: 4px 4px 0px 0px var(--color-border);
 }
 
 .brutalist-shadow-sm {
-  box-shadow: 3px 3px 0px 0px #1A1A1A;
+  box-shadow: 3px 3px 0px 0px var(--color-border);
 }
 
 .brutalist-shadow-hover {
-  box-shadow: 6px 6px 0px 0px #1A1A1A;
+  box-shadow: 6px 6px 0px 0px var(--color-border);
 }

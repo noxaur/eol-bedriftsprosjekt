@@ -23,9 +23,9 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[382px] overflow-hidden border-[3px] border-black brutalist-shadow">
+    <div className="mx-auto w-full max-w-[382px] overflow-hidden border-[3px] border-black brutalist-shadow">
       <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
+        className="flex gap-[23px] transition-transform duration-500 ease-brutalist"
         style={{ transform: `translateX(-${current * STEP}px)` }}
       >
         {slides.map((slide) => (

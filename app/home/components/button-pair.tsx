@@ -1,6 +1,6 @@
 export default function ButtonPair() {
   return (
-    <div className="flex w-full items-center justify-center gap-20">
+    <div className="flex w-full items-center justify-center gap-4 md:gap-8">
       <button
         type="button"
         className="flex items-center gap-[5px] rounded-none border-[3px] border-black bg-white px-[15px] py-[5px] font-body text-base font-bold text-black brutalist-shadow transition-shadow hover:brutalist-shadow-hover"
