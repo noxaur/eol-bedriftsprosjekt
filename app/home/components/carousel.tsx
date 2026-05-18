@@ -8,8 +8,8 @@ const slides = [
 
 export default function Carousel() {
   return (
-    <div className="overflow-x-auto">
-      <div className="flex gap-0" style={{ scrollSnapType: "x mandatory" }}>
+    <div className="w-full max-w-full overflow-x-auto">
+      <div className="flex gap-[23px]" style={{ scrollSnapType: "x mandatory" }}>
         {slides.map((slide) => (
           <img
             key={slide.alt}
