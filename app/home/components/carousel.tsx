@@ -8,10 +8,6 @@ const slides = [
   { src: "/images/carousel-5.png", alt: "Slide 5" },
 ];
 
-const SLIDE_WIDTH = 382;
-const GAP = 23;
-const STEP = SLIDE_WIDTH + GAP;
-
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
@@ -22,21 +18,66 @@ export default function Carousel() {
     return () => clearInterval(timer);
   }, []);
 
+  const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const goPrev = () =>
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
-      <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * STEP}px)` }}
-      >
-        {slides.map((slide) => (
-          <img
-            key={slide.alt}
-            src={slide.src}
-            alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
-          />
-        ))}
+    <section className="w-full max-w-2xl px-4">
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-term-dark-gray text-xs">
+          <span className="text-term-green">$</span> cat ./screenshots/
+        </span>
+        <span className="text-term-gray text-xs">
+          Image {current + 1} of {slides.length}
+        </span>
       </div>
-    </div>
+      <div className="overflow-hidden rounded border border-border-default bg-bg-secondary">
+        <div className="relative">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {slides.map((slide) => (
+              <img
+                key={slide.alt}
+                src={slide.src}
+                alt={slide.alt}
+                className="w-full shrink-0 object-cover"
+                style={{ aspectRatio: "382 / 255" }}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center justify-between border-t border-border-subtle px-3 py-2">
+          <button
+            onClick={goPrev}
+            aria-label="Previous"
+            className="rounded border border-border-default bg-bg-tertiary px-3 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green"
+          >
+            &lt; PREV
+          </button>
+          <div className="flex gap-1">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-1.5 w-4 rounded-sm transition-colors ${
+                  i === current ? "bg-term-green" : "bg-border-default"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={goNext}
+            aria-label="Next"
+            className="rounded border border-border-default bg-bg-tertiary px-3 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green"
+          >
+            NEXT &gt;
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }

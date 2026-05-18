@@ -3,17 +3,17 @@ import { describe, it, expect } from "vitest";
 import Header from "./header";
 
 describe("Header", () => {
-  it("renders the logo text", () => {
+  it("renders the eol text", () => {
     render(<Header />);
-    expect(screen.getByText("ReOL")).toBeInTheDocument();
+    expect(screen.getByText("eol")).toBeInTheDocument();
   });
 
-  it("renders the 'Maintained software' pill button", () => {
+  it("renders the active status badge", () => {
     render(<Header />);
-    expect(screen.getByText("Maintained software")).toBeInTheDocument();
+    expect(screen.getByText("$ STATUS: ACTIVE")).toBeInTheDocument();
   });
 
-  it("renders the hamburger menu button", () => {
+  it("renders the [MENU] button", () => {
     render(<Header />);
     expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
   });

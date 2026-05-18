@@ -19,7 +19,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Serif+Display&family=Roboto:wght@400;500;700&family=Special+Gothic+Expanded+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap",
   },
 ];
 
@@ -62,14 +62,20 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="min-h-screen bg-bg-primary p-8 font-mono">
+      <div className="mx-auto max-w-2xl">
+        <div className="rounded border border-border-default bg-bg-secondary p-6">
+          <p className="text-term-red text-sm">
+            <span className="text-term-green">$</span> error: {message}
+          </p>
+          <p className="mt-2 text-term-gray text-sm">{details}</p>
+          {stack && (
+            <pre className="mt-4 overflow-x-auto rounded bg-bg-primary p-4 text-term-gray text-xs">
+              <code>{stack}</code>
+            </pre>
+          )}
+        </div>
+      </div>
     </main>
   );
 }

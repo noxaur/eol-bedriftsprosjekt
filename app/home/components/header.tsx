@@ -4,40 +4,27 @@ interface HeaderProps {
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-[10px] py-[2px] bg-green-light">
-      <div className="flex items-center gap-[6.71px]">
-        <div className="relative" style={{ width: 51, height: 67.11 }}>
-          <img
-            src="/images/logo-icon.svg"
-            alt=""
-            className="absolute"
-            style={{ width: 48.28, height: 63.56, left: 1.36, top: 2.65 }}
-          />
-          <img
-            src="/images/logo-image.png"
-            alt=""
-            className="absolute"
-            style={{ width: 20.13, height: 20.13, left: 15.43, top: 23.49 }}
-          />
-          <span
-            className="absolute font-logo text-logo-sm leading-none text-black"
-            style={{ left: 12.92, top: 52.3 }}
-          >
-            ReOL
-          </span>
+    <header className="border-b border-border-subtle bg-bg-primary">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <div className="flex items-center gap-2">
+          <span className="text-term-green text-sm font-semibold">~</span>
+          <span className="text-term-cyan text-sm font-semibold">eol</span>
+          <span className="text-term-dark-gray text-xs">/</span>
+          <span className="text-term-white text-sm">maintained-software</span>
+          <span className="ml-1 inline-block h-4 w-2 animate-blink bg-term-green" />
         </div>
-      </div>
-      <div className="flex items-center gap-[9px]">
-        <span className="rounded-[5px] bg-green-normal px-[10px] py-[5px] font-body text-xs text-[#EBF8ED]">
-          Maintained software
-        </span>
-        <button
-          onClick={onMenuToggle}
-          aria-label="Toggle menu"
-          className="flex h-8 w-8 items-center justify-center"
-        >
-          <img src="/images/hamburger.svg" alt="" className="h-8 w-8" />
-        </button>
+        <div className="flex items-center gap-3">
+          <span className="hidden rounded border border-term-green-muted bg-bg-secondary px-2 py-1 font-mono text-xs text-term-green sm:inline-block">
+            $ STATUS: ACTIVE
+          </span>
+          <button
+            onClick={onMenuToggle}
+            aria-label="Toggle menu"
+            className="rounded border border-border-default bg-bg-secondary px-2 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green"
+          >
+            [MENU]
+          </button>
+        </div>
       </div>
     </header>
   );
