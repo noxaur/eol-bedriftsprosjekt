@@ -3,9 +3,9 @@ import { describe, it, expect } from "vitest";
 import Header from "./header";
 
 describe("Header", () => {
-  it("renders the logo image", () => {
+  it("renders the logo text", () => {
     render(<Header />);
-    expect(screen.getByAltText("ReOL")).toBeInTheDocument();
+    expect(screen.getByText("ReOL")).toBeInTheDocument();
   });
 
   it("renders the 'Maintained software' pill button", () => {
