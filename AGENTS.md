@@ -1,5 +1,7 @@
 # eol
 
+**Always invoke the `using-superpowers` skill at the start of any conversation** (before responding to user messages, clarifying questions, or taking any action).
+
 React Router 7 full-stack app (SSR) with Vite + TailwindCSS v4 + TypeScript strict.
 
 ## Commands
