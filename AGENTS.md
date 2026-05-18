@@ -27,6 +27,15 @@ npm run typecheck  # react-router typegen && tsc (typegen must run first)
 - No linter, formatter, or test framework is configured yet
 - No CI workflows exist
 
+## Development workflow
+
+This project follows disciplined engineering practices. All agentic work **must** use these skills where applicable:
+
+- `tdd` — write tests before implementation (red → green → refactor)
+- `subagent-driven-development` — dispatch independent work to parallel subagents
+- `dispatching-parallel-agents` — run 2+ independent tasks concurrently
+- `verification-before-completion` — run full verification before claiming success
+
 ## Agent skills
 
 ### Issue tracker
