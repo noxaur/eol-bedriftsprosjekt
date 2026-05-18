@@ -1,6 +1,7 @@
 import Header from "./components/header";
 import Carousel from "./components/carousel";
 import TrustedBy from "./components/trusted-by";
+import ButtonPair from "./components/button-pair";
 
 function LandingPage() {
   return (
@@ -8,8 +9,9 @@ function LandingPage() {
       <Header />
       <main className="flex flex-col items-center gap-[18px] px-7">
         <Carousel />
+        <TrustedBy />
+        <ButtonPair />
       </main>
-      <TrustedBy />
     </div>
   );
 }
