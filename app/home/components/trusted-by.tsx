@@ -1,28 +1,30 @@
 export default function TrustedBy() {
   return (
-    <section className="flex flex-col items-center gap-[22px] pt-[25px]">
-      <h2 className="font-body text-section-heading font-bold text-green-dark">
+    <section className="flex w-full max-w-[500px] flex-col items-center gap-6">
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-border-glow to-transparent" />
+      <h2 className="font-heading-condensed text-xs font-medium uppercase tracking-[0.2em] text-text-muted">
         Trusted by
       </h2>
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden py-2">
         <div className="flex animate-marquee items-center gap-[40px]">
           <img
             src="/images/customer-logos.svg"
             alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
+            className="h-6 w-[924px] shrink-0 opacity-60 brightness-0 invert"
           />
           <img
             src="/images/customer-logos.svg"
             alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
+            className="h-6 w-[924px] shrink-0 opacity-60 brightness-0 invert"
           />
           <img
             src="/images/customer-logos.svg"
             alt="Customer logos"
-            className="h-[20px] w-[924px] shrink-0"
+            className="h-6 w-[924px] shrink-0 opacity-60 brightness-0 invert"
           />
         </div>
       </div>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-border-glow to-transparent" />
     </section>
   );
 }

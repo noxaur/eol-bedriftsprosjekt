@@ -1,10 +1,10 @@
 export default function Faq() {
   return (
-    <section className="mx-auto flex w-full max-w-[382px] flex-col items-center gap-[15px] rounded-[5px] bg-green-light-active py-[30px]">
-      <h2 className="w-full text-center px-[20px] font-body text-section-heading font-bold text-green-dark">
+    <section className="mx-auto w-full max-w-[420px] glass-panel glow-border rounded-xl py-10 animate-pulse-glow" style={{ animationDuration: '8s' }}>
+      <h2 className="w-full px-8 text-center font-heading text-section-heading text-text-primary glow-text">
         Frequently asked questions
       </h2>
-      <p className="w-[329.95px] text-center font-body text-base text-font-muted">
+      <p className="mx-auto mt-4 max-w-[330px] text-center font-body text-base leading-relaxed text-text-secondary">
         daskjdaksdabsdkbajsdaas asdasdasdas dasdasdasdasdas dasdadasdasdadasd apsidhu9asdfgbhuiabfgipbdfag dasfg ds fgs dfg sdfg
       </p>
     </section>
