@@ -23,7 +23,7 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="glow-border mx-auto w-[382px] overflow-hidden rounded-lg bg-surface-800/80">
+    <div className="mx-auto w-[382px] overflow-hidden rounded-lg bg-surface-800 border border-border-subtle">
       <div
         className="flex gap-[23px] transition-transform duration-500 ease-in-out px-1 pt-1"
         style={{ transform: `translateX(-${current * STEP}px)` }}

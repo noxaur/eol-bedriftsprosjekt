@@ -28,11 +28,11 @@
   --color-surface-800: oklch(16% 0.01 145);
   --color-surface-700: oklch(20% 0.012 145);
   --color-surface-600: oklch(25% 0.014 145);
-  --color-surface-glass: oklch(20% 0.012 145 / 0.6);
-  --color-border-glow: oklch(65% 0.18 145 / 0.3);
+  --color-surface-500: oklch(30% 0.014 145);
+  --color-border-subtle: oklch(65% 0.18 145 / 0.15);
   --color-text-primary: oklch(92% 0.005 145);
   --color-text-secondary: oklch(70% 0.008 145);
-  --color-text-muted: oklch(50% 0.008 145);
+  --color-text-muted: oklch(55% 0.01 145);
   --color-accent: oklch(65% 0.18 145);
   --color-accent-dim: oklch(50% 0.14 145);
 
@@ -72,82 +72,18 @@
   will-change: transform;
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes drift {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(15px, -10px);
+    }
   }
-  33% {
-    transform: translate(30px, -40px) scale(1.05);
+
+  .animate-drift {
+    animation: drift 25s var(--ease-out-quart) infinite;
+    will-change: transform;
   }
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-}
-
-@keyframes float-medium {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-40px, 30px) scale(1.08);
-  }
-  66% {
-    transform: translate(25px, -25px) scale(0.92);
-  }
-}
-
-@keyframes float-fast {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(20px, -30px) scale(1.03);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.animate-float-slow {
-  animation: float-slow 20s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-float-medium {
-  animation: float-medium 15s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-float-fast {
-  animation: float-fast 12s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
-  will-change: opacity;
-}
-
-.glass-panel {
-  background: var(--color-surface-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--color-border-glow);
-}
-
-.glow-border {
-  box-shadow:
-    0 0 0 1px var(--color-border-glow),
-    0 0 20px oklch(65% 0.18 145 / 0.1),
-    0 0 40px oklch(65% 0.18 145 / 0.05);
-}
-
-.glow-text {
-  text-shadow: 0 0 30px oklch(65% 0.18 145 / 0.3);
 }
