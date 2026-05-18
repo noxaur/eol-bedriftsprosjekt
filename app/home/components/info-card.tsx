@@ -5,8 +5,8 @@ interface InfoCardProps {
 
 export default function InfoCard({ title, body }: InfoCardProps) {
   return (
-    <div className="relative mx-auto h-[389px] w-[382px] bg-green-light-active">
-      <h3 className="absolute left-[82px] top-[31px] font-heading text-heading-lg text-font-dark">
+    <div className="relative mx-auto h-[389px] w-[382px] bg-brand-subtle">
+      <h3 className="absolute left-[82px] top-[31px] font-heading text-heading-lg text-text-primary">
         {title}
       </h3>
 
@@ -16,7 +16,7 @@ export default function InfoCard({ title, body }: InfoCardProps) {
         {body}
       </p>
 
-      <div className="absolute bottom-[32px] left-[94px] h-[30px] w-[193px] rounded bg-green-normal" />
+      <div className="absolute bottom-[32px] left-[94px] h-[30px] w-[193px] rounded bg-brand" />
     </div>
   );
 }

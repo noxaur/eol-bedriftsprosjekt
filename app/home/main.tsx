@@ -1,19 +1,27 @@
-import Header from "./components/header";
-import Carousel from "./components/carousel";
-import TrustedBy from "./components/trusted-by";
-import ButtonPair from "./components/button-pair";
-import Faq from "./components/faq";
+import Nav from "./components/nav";
+import Hero from "./components/hero";
+import LogoBar from "./components/logo-bar";
+import FeatureGrid from "./components/feature-grid";
+import Stats from "./components/stats";
+import HowItWorks from "./components/how-it-works";
+import Testimonial from "./components/testimonial";
+import FinalCTA from "./components/final-cta";
+import Footer from "./components/footer";
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-green-light">
-      <Header />
-      <main className="flex flex-col items-center gap-[18px]">
-        <Carousel />
-        <TrustedBy />
-        <ButtonPair />
-        <Faq />
+    <div className="min-h-screen">
+      <Nav />
+      <main>
+        <Hero />
+        <LogoBar />
+        <FeatureGrid />
+        <Stats />
+        <HowItWorks />
+        <Testimonial />
+        <FinalCTA />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export default function TrustedBy() {
   return (
     <section className="flex flex-col items-center gap-[22px] pt-[25px]">
-      <h2 className="font-body text-section-heading font-bold text-green-dark">
+      <h2 className="font-body text-section-heading font-bold text-brand-dark">
         Trusted by
       </h2>
       <div className="relative w-full overflow-hidden">

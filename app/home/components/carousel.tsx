@@ -33,7 +33,7 @@ export default function Carousel() {
             key={slide.alt}
             src={slide.src}
             alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
+            className="h-[255px] w-[382px] shrink-0 rounded-lg object-cover"
           />
         ))}
       </div>
