@@ -38,6 +38,7 @@ This project follows disciplined engineering practices. All agentic work **must*
 - `verification-before-completion` — run full verification before claiming success
 - `figma` MCP — fetch Figma design data during component implementation to match pixel-perfect specs
 - `webapp-testing` — visually verify components in a browser against Figma design
+- **PR screenshots** — before completing a PR, take a pre-screenshot (before changes) and a post-screenshot (after changes) and attach both to the PR description
 
 ## Agent skills
 
