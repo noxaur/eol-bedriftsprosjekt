@@ -19,6 +19,7 @@ npm run typecheck  # react-router typegen && tsc (typegen must run first)
 - **Routes**: defined in `app/routes.ts` (config-based, not file-based routing). Currently one route: `index("routes/home.tsx")`
 - **Path alias**: `~/*` → `./app/*`
 - **Styles**: `app/app.css` (TailwindCSS v4 via `@tailwindcss/vite` plugin)
+- **Assets**: SVG and image files from Figma are pre-provided in `public/images/`
 - **Generated types**: `.react-router/types/` — created by `react-router typegen`, gitignored
 
 ## Gotchas
