@@ -34,7 +34,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         <button
           onClick={onMenuToggle}
           aria-label="Toggle menu"
-          className="group flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-noir-surface-elevated"
+          className="group flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-noir-surface-elevated focus-visible:outline focus-visible:outline-2 focus-visible:outline-noir-accent focus-visible:outline-offset-2"
         >
           <img src="/images/hamburger.svg" alt="" className="h-5 w-5 opacity-70 transition-opacity group-hover:opacity-100" />
         </button>
