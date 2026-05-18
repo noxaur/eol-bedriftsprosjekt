@@ -25,7 +25,7 @@ export default function Carousel() {
           {slides.map((slide, i) => (
             <div
               key={slide.alt}
-              className="relative shrink-0 overflow-hidden border border-rule"
+              className="relative shrink-0 overflow-hidden rounded-2xl border-2 border-rule transition-all hover:shadow-lg"
               style={{ width: "min(100%, 480px)" }}
             >
               <img
@@ -33,11 +33,11 @@ export default function Carousel() {
                 alt={slide.alt}
                 className="aspect-[3/2] w-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-rule bg-surface-raised px-4 py-2">
+              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between rounded-b-2xl border-t border-rule bg-surface-raised/90 px-4 py-2 backdrop-blur-sm">
                 <span className="text-xs font-medium text-text-muted">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="h-2 w-2 bg-accent" />
+                <div className="h-2.5 w-2.5 rounded-full bg-accent" />
               </div>
             </div>
           ))}
@@ -45,16 +45,16 @@ export default function Carousel() {
       </div>
 
       {/* Indicators */}
-      <div className="mt-4 flex gap-2">
+      <div className="mt-5 flex gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-1 transition-all duration-300 ${
+            className={`rounded-full transition-all duration-300 ${
               i === current
-                ? "w-8 bg-accent"
-                : "w-4 bg-rule hover:bg-text-muted"
+                ? "h-2.5 w-8 bg-accent"
+                : "h-2.5 w-2.5 bg-rule hover:bg-accent-subtle"
             }`}
           />
         ))}

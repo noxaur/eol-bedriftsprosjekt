@@ -5,7 +5,7 @@ import Faq from "./faq";
 describe("Faq", () => {
   it("renders the section heading", () => {
     render(<Faq />);
-    expect(screen.getByText("Frequently asked questions")).toBeInTheDocument();
+    expect(screen.getByText("Questions? We have answers")).toBeInTheDocument();
   });
 
   it("renders FAQ items", () => {

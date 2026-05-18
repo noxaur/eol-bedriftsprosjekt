@@ -8,9 +8,9 @@ describe("Header", () => {
     expect(screen.getByText("EOL")).toBeInTheDocument();
   });
 
-  it("renders the 'Maintained software' label on desktop", () => {
+  it("renders the 'maintained software' label on desktop", () => {
     render(<Header />);
-    expect(screen.getByText("Maintained software")).toBeInTheDocument();
+    expect(screen.getByText("maintained software")).toBeInTheDocument();
   });
 
   it("renders the menu toggle button", () => {

@@ -1,32 +1,32 @@
 export default function ButtonPair() {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
       <button
         type="button"
-        className="group inline-flex items-center gap-2 border-b border-accent pb-1 font-sans text-sm font-medium text-text transition-colors hover:text-accent"
+        className="group inline-flex items-center gap-2 rounded-full border-2 border-accent px-6 py-3 text-sm font-semibold text-accent transition-all hover:bg-accent hover:text-text-inverse"
       >
-        Contact sales
+        Say hello
         <svg
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
           fill="none"
           className="transition-transform group-hover:translate-x-1"
         >
           <path
-            d="M1 7h12M8 2l5 5-5 5"
+            d="M3 8h10M9 4l4 4-4 4"
             stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="square"
-            strokeLinejoin="miter"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
       <button
         type="button"
-        className="inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-sm font-medium text-text-inverse transition-colors hover:bg-accent-deep"
+        className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-text-inverse transition-all hover:bg-accent-deep hover:shadow-lg"
       >
-        Read more
+        Learn more
       </button>
     </div>
   );

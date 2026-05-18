@@ -4,7 +4,7 @@
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Sora", sans-serif;
 
-  /* Modular scale, 1.5 ratio */
+  /* Playful scale with more personality */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
   --text-base: clamp(1rem, 0.9rem + 0.45vw, 1.125rem);
@@ -13,17 +13,20 @@
   --text-2xl: clamp(2rem, 1.5rem + 2vw, 3rem);
   --text-3xl: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
 
-  /* Swiss/Geometric palette — OKLCH, tinted toward green */
-  --color-surface: oklch(0.975 0.004 145);
-  --color-surface-raised: oklch(0.99 0.002 145);
-  --color-surface-deep: oklch(0.94 0.006 145);
-  --color-text: oklch(0.18 0.008 145);
-  --color-text-muted: oklch(0.45 0.01 145);
-  --color-text-inverse: oklch(0.98 0.004 145);
-  --color-accent: oklch(0.62 0.18 145);
-  --color-accent-deep: oklch(0.42 0.14 145);
-  --color-accent-subtle: oklch(0.88 0.06 145);
-  --color-rule: oklch(0.85 0.005 145);
+  /* Playful/Illustrative palette — warm, friendly, approachable */
+  --color-surface: oklch(0.975 0.015 85);
+  --color-surface-raised: oklch(0.99 0.008 85);
+  --color-surface-deep: oklch(0.93 0.025 85);
+  --color-surface-warm: oklch(0.95 0.035 75);
+  --color-text: oklch(0.25 0.02 55);
+  --color-text-muted: oklch(0.5 0.025 65);
+  --color-text-inverse: oklch(0.98 0.008 85);
+  --color-accent: oklch(0.65 0.22 35);
+  --color-accent-deep: oklch(0.5 0.2 35);
+  --color-accent-subtle: oklch(0.88 0.08 35);
+  --color-accent-amber: oklch(0.75 0.16 75);
+  --color-accent-sage: oklch(0.72 0.1 145);
+  --color-rule: oklch(0.88 0.015 85);
 
   --spacing-section-lg: clamp(4rem, 8vw, 7.5rem);
   --spacing-section-xl: clamp(5rem, 12vw, 9rem);
@@ -61,4 +64,47 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
   will-change: transform;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
 }
