@@ -15,8 +15,7 @@ describe("ButtonPair", () => {
 
   it("renders an arrow icon inside Contact sales button", () => {
     render(<ButtonPair />);
-    const buttons = screen.getAllByRole("button");
-    const contactSales = buttons[0];
+    const contactSales = screen.getByRole("button", { name: /contact sales/i });
     expect(contactSales.querySelector("img")).toBeTruthy();
   });
 });
