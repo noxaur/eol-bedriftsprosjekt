@@ -1,12 +1,32 @@
 export default function ButtonPair() {
   return (
-    <div className="flex w-full items-center justify-center gap-20">
-      <button type="button" className="flex items-center gap-[5px] rounded-[5px] border border-green-normal px-[15px] py-[5px] font-body text-base text-green-normal">
-        Contact sales
-        <img src="/images/arrow.svg" alt="" className="h-4 w-[14px]" />
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+      <button
+        type="button"
+        className="group inline-flex items-center gap-2 rounded-full border-2 border-accent px-6 py-3 text-sm font-semibold text-accent transition-all hover:bg-accent hover:text-text-inverse"
+      >
+        Say hello
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          className="transition-transform group-hover:translate-x-1"
+        >
+          <path
+            d="M3 8h10M9 4l4 4-4 4"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
-      <button type="button" className="rounded-[5px] bg-green-normal px-[15px] py-[5px] font-body text-base text-green-light">
-        Read more
+      <button
+        type="button"
+        className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-text-inverse transition-all hover:bg-accent-deep hover:shadow-lg"
+      >
+        Learn more
       </button>
     </div>
   );
