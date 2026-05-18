@@ -4,7 +4,7 @@
 
 **Goal:** Build the mobile landing page for ReOL (EOL software maintenance company) matching the Figma design at node 49:3.
 
-**Architecture:** Single mobile-first page composed of 6 independent sections (Header, Carousel, TrustedBy, ButtonPair, InfoCard, AboutSection), each a standalone component, assembled in `main.tsx`. Tests use Vitest + React Testing Library. Brand tokens defined in Tailwind v4 theme.
+**Architecture:** Single mobile-first page composed of 6 independent sections (Header, Carousel, TrustedBy, ButtonPair, FAQ, AboutSection), each a standalone component, assembled in `main.tsx`. Tests use Vitest + React Testing Library. Brand tokens defined in Tailwind v4 theme.
 
 **Tech Stack:** React 19, React Router 7, TailwindCSS v4, TypeScript strict, Vitest + @testing-library/react, SVGs
 
@@ -23,7 +23,7 @@ Each feature lives in its own branch. Merge order matters — components depend 
 | 02 | `feature/carousel` | Horizontal image carousel | 00 |
 | 03 | `feature/trusted-by` | "Trusted by" + customer logos | 00 |
 | 04 | `feature/button-pair` | Contact sales + Read more buttons | 00 |
-| 05 | `feature/info-card` | Poster-style info card | 00 |
+| 05 | `feature/faq` | FAQ section with green background | 00 |
 | 06 | `feature/about-section` | "Maintaining EOL software" section | 00 |
 | 07 | `feature/landing-page` | Assemble all components, cleanup | 01-06 |
 | 08 | `feature/verification` | Typecheck, full test suite, build | 07 |
@@ -45,7 +45,7 @@ app/
 │       ├── carousel.tsx             # Horizontal image carousel
 │       ├── trusted-by.tsx           # "Trusted by" heading + customer logos
 │       ├── button-pair.tsx          # "Contact sales" + "Read more" buttons
-│       ├── info-card.tsx            # Image + title + body card
+│       ├── faq.tsx                  # FAQ section with green background
 │       └── about-section.tsx        # "Maintaining EOL software" section
 ├── test/
 │   └── setup.ts                     # Vitest global setup
@@ -65,7 +65,7 @@ Each feature has a detailed spec with complete code in `docs/superpowers/plans/f
 - [02-carousel.md](features/02-carousel.md) — Carousel component
 - [03-trusted-by.md](features/03-trusted-by.md) — TrustedBy section
 - [04-button-pair.md](features/04-button-pair.md) — ButtonPair component
-- [05-info-card.md](features/05-info-card.md) — InfoCard component
+- [05-faq.md](features/05-faq.md) — FAQ section
 - [06-about-section.md](features/06-about-section.md) — AboutSection component
 - [07-assembly.md](features/07-assembly.md) — LandingPage assembly + cleanup
 - [08-verification.md](features/08-verification.md) — Final verification pass

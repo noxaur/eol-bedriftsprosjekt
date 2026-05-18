@@ -73,7 +73,7 @@ import Header from "./components/header";
 import Carousel from "./components/carousel";
 import TrustedBy from "./components/trusted-by";
 import ButtonPair from "./components/button-pair";
-import InfoCard from "./components/info-card";
+import Faq from "./components/faq";
 import AboutSection from "./components/about-section";
 
 export default function LandingPage() {
@@ -92,10 +92,7 @@ export default function LandingPage() {
           <div className="h-px w-full bg-current opacity-20" />
         </div>
 
-        <InfoCard
-          title="asdasdasdasdasd"
-          body="daskjdaksdabsdkbajsdaas asdasdasdas dasdasdasdasdas dasdadasdasdadasd apsidhu9asdfgbhuiabfgipbdfag dasfg ds fgs dfg sdfg"
-        />
+        <Faq />
 
         <AboutSection />
       </main>
@@ -103,8 +100,6 @@ export default function LandingPage() {
   );
 }
 ```
-
-> Note: The placeholder text ("asdasdasdasdasd") is from the Figma design and should be replaced with real copy later.
 
 ### Step 4: Clean up unused files
 
@@ -139,8 +134,8 @@ npm run build
 ## Commit
 
 ```bash
-git add app/home/main.tsx app/home/main.test.tsx
-git rm app/home/components/footer.tsx
+git add app/home/components/faq.tsx app/home/components/faq.test.tsx app/home/main.tsx app/home/main.test.tsx
+git rm app/home/components/footer.tsx app/home/components/info-card.tsx app/home/components/info-card.test.tsx
 git rm -r app/welcome/
 git commit -m "feat: assemble LandingPage from all sections, remove unused files"
 ```

@@ -11,7 +11,7 @@ A "Trusted by" heading with a customer logos strip below it. Matches the Figma T
 
 ## Figma reference
 
-- "Trusted by" heading: Special Gothic Expanded One, 14px, dark green (`#2B8838`)
+- "Trusted by" heading: Roboto Bold, 28px, dark green (`#2B8838`)
 - Customer logos: SVG strip at 600x20px
 
 ## Files
@@ -56,7 +56,7 @@ Expected: FAIL — module not found.
 export default function TrustedBy() {
   return (
     <section className="flex flex-col items-center gap-[22px] pt-[25px]">
-      <h2 className="font-logo text-sm text-green-dark">Trusted by</h2>
+      <h2 className="font-body text-[28px] font-bold text-green-dark">Trusted by</h2>
       <img
         src="/images/customer-logos.svg"
         alt="Customer logos"
