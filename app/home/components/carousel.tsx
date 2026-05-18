@@ -23,7 +23,7 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
+    <div className="mx-auto w-[382px] overflow-hidden border-[3px] border-black brutalist-shadow">
       <div
         className="flex gap-[23px] transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${current * STEP}px)` }}
@@ -33,7 +33,7 @@ export default function Carousel() {
             key={slide.alt}
             src={slide.src}
             alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-[5px] object-cover"
+            className="h-[255px] w-[382px] shrink-0 rounded-none object-cover"
           />
         ))}
       </div>

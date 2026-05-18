@@ -14,15 +14,16 @@
   --text-heading-lg: clamp(22px, 7vw, 29px);
   --text-logo-sm: clamp(8px, 2.3vw, 10.07px);
   --text-section-heading: clamp(24px, 7.5vw, 26px);
+  --text-display: clamp(36px, 10vw, 56px);
 
-  --color-green-light: #F5F9EB;
+  --color-yellow-accent: #FFE500;
+  --color-yellow-dark: #E6CF00;
   --color-green-normal: #39B54A;
   --color-green-dark: #2B8838;
   --color-green-darker: #143F1A;
-  --color-green-light-active: #C2E8C7;
-  --color-grey-300: #2A2D2A;
-  --color-font-dark: #0C0E0C;
-  --color-font-muted: #303230;
+  --color-black: #1A1A1A;
+  --color-white: #FAFAFA;
+  --color-border: #1A1A1A;
 }
 
 @layer base {
@@ -32,13 +33,7 @@
 
   html,
   body {
-    @apply bg-white dark:bg-gray-950;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
+    @apply bg-white;
   }
 }
 
@@ -54,4 +49,16 @@
 .animate-marquee {
   animation: marquee 10s linear infinite;
   will-change: transform;
+}
+
+.brutalist-shadow {
+  box-shadow: 4px 4px 0px 0px #1A1A1A;
+}
+
+.brutalist-shadow-sm {
+  box-shadow: 3px 3px 0px 0px #1A1A1A;
+}
+
+.brutalist-shadow-hover {
+  box-shadow: 6px 6px 0px 0px #1A1A1A;
 }

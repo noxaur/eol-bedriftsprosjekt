@@ -6,9 +6,9 @@ import Faq from "./components/faq";
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-green-light">
+    <div className="min-h-screen bg-white">
       <Header />
-      <main className="flex flex-col items-center gap-[18px]">
+      <main className="flex flex-col items-center gap-[32px] px-4 py-12">
         <Carousel />
         <TrustedBy />
         <ButtonPair />
