@@ -32,7 +32,7 @@ function LandingPage() {
               <span className="text-green-normal">that endures</span>
             </h1>
             <p className="font-body text-hero-sub max-w-[600px] text-center leading-relaxed text-green-light/80">
-              Maintained, secure, built to last. Enterprise-grade solutions that evolve with your business.
+              Maintained, secure, built to last. No rewrites. No shortcuts. Just software that works, year after year.
             </p>
             <div className="rounded-xl border-2 border-green-normal/20 bg-green-darker/50 p-3 shadow-[0_0_60px_rgba(57,181,74,0.08)]">
               <Carousel />

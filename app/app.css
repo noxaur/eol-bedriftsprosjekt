@@ -5,8 +5,10 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-heading: "DM Serif Display", serif;
   --font-logo: "Special Gothic Expanded One", sans-serif;
-  --font-body: "Roboto", sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-heading-condensed: "Roboto Condensed", sans-serif;
+
+  --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
 
   --text-xs: clamp(10px, 2.8vw, 12px);
   --text-sm: clamp(12px, 3.2vw, 14px);
@@ -86,7 +88,7 @@
 }
 
 .animate-float-slow {
-  animation: float-slow 7s ease-in-out infinite;
+  animation: float-slow 7s var(--ease-out-quart) infinite;
 }
 
 @keyframes float-medium {
@@ -95,7 +97,7 @@
 }
 
 .animate-float-medium {
-  animation: float-medium 9s ease-in-out infinite 1s;
+  animation: float-medium 9s var(--ease-out-quart) infinite 1s;
 }
 
 @keyframes float-fast {
@@ -104,16 +106,12 @@
 }
 
 .animate-float-fast {
-  animation: float-fast 5s ease-in-out infinite 0.5s;
+  animation: float-fast 5s var(--ease-out-quart) infinite 0.5s;
 }
 
 @keyframes glow-pulse {
   0%, 100% { box-shadow: 0 0 20px rgba(57, 181, 74, 0.3); }
   50% { box-shadow: 0 0 50px rgba(57, 181, 74, 0.6); }
-}
-
-.animate-glow {
-  animation: glow-pulse 3s ease-in-out infinite;
 }
 
 @keyframes marquee {
@@ -132,5 +130,15 @@
 }
 
 .animate-slide-up {
-  animation: slide-up 0.6s ease-out forwards;
+  animation: slide-up 0.6s var(--ease-out-quart) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-float-fast,
+  .animate-marquee,
+  .animate-slide-up {
+    animation: none !important;
+  }
 }

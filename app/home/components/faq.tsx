@@ -11,7 +11,7 @@ export default function Faq() {
       </h2>
       <div className="h-1 w-24 rounded-full bg-green-normal" />
       <p className="font-body text-lg leading-relaxed text-font-muted text-center max-w-[500px]">
-        daskjdaksdabsdkbajsdaas asdasdasdas dasdasdasdasdas dasdadasdasdadasd apsidhu9asdfgbhuiabfgipbdfag
+        We build software that stays relevant. Every line is reviewed, tested, and documented so you can focus on what matters — running your business.
       </p>
     </section>
   );

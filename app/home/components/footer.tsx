@@ -8,12 +8,12 @@ export default function Footer() {
           <span className="font-body text-xs text-green-normal/50">|</span>
           <span className="font-body text-xs text-green-normal/50">Maintained software</span>
         </div>
-        <div className="flex gap-8 font-body text-xs text-green-normal/40">
-          <span>Privacy</span>
-          <span>Terms</span>
-          <span>Security</span>
-          <span>Contact</span>
-        </div>
+        <nav className="flex gap-8 font-body text-xs text-green-normal/40">
+          <a href="#" className="transition-colors hover:text-green-normal/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-green-deep rounded">Privacy</a>
+          <a href="#" className="transition-colors hover:text-green-normal/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-green-deep rounded">Terms</a>
+          <a href="#" className="transition-colors hover:text-green-normal/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-green-deep rounded">Security</a>
+          <a href="#" className="transition-colors hover:text-green-normal/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-green-deep rounded">Contact</a>
+        </nav>
         <p className="font-body text-xs text-green-normal/30">
           &copy; {new Date().getFullYear()} EOL. All rights reserved.
         </p>
