@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const slides = [
   { src: "/images/carousel-1.png", alt: "Slide 1" },
@@ -10,18 +10,47 @@ const slides = [
 
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [slideWidth, setSlideWidth] = useState(0);
 
   useEffect(() => {
+    const measure = () => {
+      if (trackRef.current?.firstElementChild) {
+        setSlideWidth(
+          (trackRef.current.firstElementChild as HTMLElement).offsetWidth,
+        );
+      }
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (trackRef.current) observer.observe(trackRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [paused]);
+
+  const gap = 16;
+  const offset = -(current * (slideWidth + gap));
 
   return (
-    <div className="w-full overflow-hidden">
+    <div
+      className="w-full overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="relative">
-        <div className="flex gap-4 transition-transform duration-500 ease-out">
+        <div
+          ref={trackRef}
+          className="carousel-track flex gap-4 transition-transform duration-500 ease-out-expo"
+          style={{ transform: `translateX(${offset}px)` }}
+        >
           {slides.map((slide, i) => (
             <div
               key={slide.alt}

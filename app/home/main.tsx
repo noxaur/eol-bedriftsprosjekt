@@ -60,7 +60,7 @@ function LandingPage() {
                 Selected work
               </h2>
               <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-text-muted md:inline">
-                2024—2026
+                2024–2026
               </span>
             </div>
             <Carousel />
