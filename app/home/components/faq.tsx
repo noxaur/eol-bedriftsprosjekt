@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 interface FaqItem {
   question: string;
@@ -28,13 +28,14 @@ export default function Faq() {
     <section className="w-full max-w-2xl px-4">
       <div className="mb-4">
         <span className="text-term-dark-gray text-xs">
-          <span className="text-term-green">$</span> cat ./faq.md
+          <span className="text-term-green">$</span> ls -la ./faq/
         </span>
       </div>
-      <h2 className="mb-6 font-mono text-lg font-bold tracking-wider text-term-white">
-        FREQUENTLY ASKED QUESTIONS
-      </h2>
-      <div className="space-y-px rounded border border-border-default bg-border-subtle">
+      <div className="rounded border border-border-default bg-bg-secondary divide-y divide-border-subtle">
+        <div className="px-4 py-2 font-mono text-xs text-term-dark-gray">
+          <span className="text-term-green">drwxr-xr-x</span>  faq
+        </div>
+        <h2 className="sr-only">Frequently asked questions</h2>
         {faqItems.map((item, i) => (
           <FaqAccordion key={i} item={item} index={i} />
         ))}
@@ -51,17 +52,17 @@ function FaqAccordion({
   index: number;
 }) {
   return (
-    <div className="bg-bg-secondary">
-      <div className="border-b border-border-subtle px-4 py-3">
-        <div className="flex items-start gap-2">
-          <span className="text-term-dark-gray shrink-0 text-xs">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="text-term-cyan text-sm">{item.question}</span>
+    <div className="px-4 py-3">
+      <div className="flex items-center gap-2">
+        <span className="text-term-dark-gray shrink-0 w-6 font-mono text-xs">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div className="min-w-0">
+          <span className="text-term-cyan text-sm font-medium">{item.question}</span>
+          <p className="mt-1 pr-4 font-mono text-xs leading-relaxed text-term-gray">
+            {item.answer}
+          </p>
         </div>
-        <p className="mt-2 pl-6 font-mono text-xs leading-relaxed text-term-gray">
-          {item.answer}
-        </p>
       </div>
     </div>
   );

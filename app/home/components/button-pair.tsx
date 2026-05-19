@@ -3,7 +3,7 @@ export default function ButtonPair() {
     <div className="flex flex-wrap items-center justify-center gap-4 px-4">
       <button
         type="button"
-        className="group flex items-center gap-2 rounded border border-term-green bg-bg-secondary px-4 py-2 font-mono text-sm text-term-green transition-all hover:bg-term-green hover:text-bg-primary"
+        className="group flex items-center gap-2 rounded border border-term-green bg-bg-secondary px-4 py-2 font-mono text-sm text-term-green transition-all hover:bg-term-green hover:text-bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-term-green"
       >
         <span className="text-term-dark-gray group-hover:text-bg-primary">
           $
@@ -17,7 +17,7 @@ export default function ButtonPair() {
       </button>
       <button
         type="button"
-        className="rounded border border-border-default bg-bg-secondary px-4 py-2 font-mono text-sm text-term-gray transition-colors hover:border-term-cyan hover:text-term-cyan"
+        className="rounded border border-border-default bg-bg-secondary px-4 py-2 font-mono text-sm text-term-gray transition-colors hover:border-term-cyan hover:text-term-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-term-cyan"
       >
         <span className="text-term-dark-gray">$ </span>
         Read More

@@ -20,7 +20,7 @@ export default function Header({ onMenuToggle }: HeaderProps) {
           <button
             onClick={onMenuToggle}
             aria-label="Toggle menu"
-            className="rounded border border-border-default bg-bg-secondary px-2 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green"
+            className="rounded border border-border-default bg-bg-secondary px-2 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-term-green"
           >
             [MENU]
           </button>

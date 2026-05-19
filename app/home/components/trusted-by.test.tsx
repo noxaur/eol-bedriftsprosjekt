@@ -5,7 +5,7 @@ import TrustedBy from "./trusted-by";
 describe("TrustedBy", () => {
   it("renders the 'TRUSTED BY' heading", () => {
     render(<TrustedBy />);
-    expect(screen.getByText("TRUSTED BY")).toBeInTheDocument();
+    expect(screen.getByText("Trusted by")).toBeInTheDocument();
   });
 
   it("renders the customer logos image", () => {

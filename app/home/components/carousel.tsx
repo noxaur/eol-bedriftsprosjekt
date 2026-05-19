@@ -35,7 +35,7 @@ export default function Carousel() {
       <div className="overflow-hidden rounded border border-border-default bg-bg-secondary">
         <div className="relative">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
+            className="flex transition-transform duration-500 ease-out-quart motion-reduce:transition-none"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {slides.map((slide) => (
@@ -53,7 +53,7 @@ export default function Carousel() {
           <button
             onClick={goPrev}
             aria-label="Previous"
-            className="rounded border border-border-default bg-bg-tertiary px-3 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green"
+            className="rounded border border-border-default bg-bg-tertiary px-3 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-term-green"
           >
             &lt; PREV
           </button>
@@ -63,7 +63,7 @@ export default function Carousel() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-1.5 w-4 rounded-sm transition-colors ${
+                className={`h-1.5 w-4 rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-term-green ${
                   i === current ? "bg-term-green" : "bg-border-default"
                 }`}
               />
@@ -72,7 +72,7 @@ export default function Carousel() {
           <button
             onClick={goNext}
             aria-label="Next"
-            className="rounded border border-border-default bg-bg-tertiary px-3 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green"
+            className="rounded border border-border-default bg-bg-tertiary px-3 py-1 font-mono text-xs text-term-gray transition-colors hover:border-term-green hover:text-term-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-term-green"
           >
             NEXT &gt;
           </button>
