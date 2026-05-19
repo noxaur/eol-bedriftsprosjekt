@@ -33,7 +33,7 @@ export default function Carousel() {
                 alt={slide.alt}
                 className="aspect-[3/2] w-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between rounded-b-2xl border-t border-rule bg-surface-raised/90 px-4 py-2 backdrop-blur-sm">
+              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between rounded-b-2xl border-t border-rule bg-surface-raised px-4 py-2">
                 <span className="text-xs font-medium text-text-muted">
                   {String(i + 1).padStart(2, "0")}
                 </span>

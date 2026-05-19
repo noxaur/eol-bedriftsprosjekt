@@ -12,31 +12,23 @@ function LandingPage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden px-6 pt-[clamp(3rem,8vw,6rem)] md:px-12">
-          {/* Decorative blobs */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-subtle/40 blur-3xl" />
-          <div className="pointer-events-none absolute -left-10 top-40 h-48 w-48 rounded-full bg-accent-amber/20 blur-3xl" />
-
           <div className="relative mx-auto max-w-6xl">
-            <div className="grid gap-8 md:grid-cols-12 md:gap-6">
-              <div className="md:col-span-8">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="h-2.5 w-2.5 animate-wiggle rounded-full bg-accent" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
-                    Since 2019
-                  </span>
-                </div>
-                <h1 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-text">
-                  Software that
-                  <br />
-                  lasts.
-                  <span className="text-accent">.</span>
-                </h1>
+            <div className="md:max-w-[70ch]">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="h-2.5 w-2.5 animate-wiggle rounded-full bg-accent" />
+                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
+                  Since 2019
+                </span>
               </div>
-              <div className="md:col-span-4 md:col-start-9">
-                <p className="text-base leading-relaxed text-text-muted">
-                  We build and maintain the systems that keep your business running. No hype, no rewrites, just reliable software that works.
-                </p>
-              </div>
+              <h1 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-text">
+                Software that
+                <br />
+                lasts.
+                <span className="text-accent">.</span>
+              </h1>
+              <p className="mt-6 max-w-[65ch] text-base leading-relaxed text-text-muted">
+                We build and maintain the systems that keep your business running. No hype, no rewrites, just reliable software that works.
+              </p>
             </div>
 
             {/* Playful dots */}
@@ -83,7 +75,7 @@ function LandingPage() {
                 </h2>
               </div>
               <span className="hidden rounded-full bg-surface-deep px-3 py-1 text-xs font-medium text-text-muted md:inline">
-                2024—2026
+                2024-2026
               </span>
             </div>
             <Carousel />
@@ -98,11 +90,8 @@ function LandingPage() {
         </div>
 
         {/* CTA */}
-        <section className="relative overflow-hidden px-6 pt-[clamp(3rem,6vw,5rem)] md:px-12">
-          {/* Decorative blob */}
-          <div className="pointer-events-none absolute -right-10 -bottom-20 h-56 w-56 rounded-full bg-accent-subtle/30 blur-3xl" />
-
-          <div className="relative mx-auto max-w-6xl">
+        <section className="px-6 pt-[clamp(3rem,6vw,5rem)] md:px-12">
+          <div className="mx-auto max-w-6xl">
             <div className="grid gap-8 md:grid-cols-12">
               <div className="md:col-span-7">
                 <div className="mb-4 flex items-center gap-2">
@@ -134,7 +123,7 @@ function LandingPage() {
 
         {/* FAQ */}
         <section className="px-6 pt-[clamp(3rem,6vw,5rem)] md:px-12">
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-6xl lg:max-w-[80rem]">
             <Faq />
           </div>
         </section>
