@@ -8,32 +8,49 @@ const slides = [
   { src: "/images/carousel-5.png", alt: "Slide 5" },
 ];
 
-const SLIDE_WIDTH = 382;
-const GAP = 23;
-const STEP = SLIDE_WIDTH + GAP;
-
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(0);
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setSlideWidth(382);
+      } else {
+        const container = document.querySelector("#carousel-container");
+        if (container) {
+          setSlideWidth(container.clientWidth);
+        }
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 4000);
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
+  const gap = 23;
+  const step = slideWidth + gap;
+
   return (
-    <div className="mx-auto w-[382px] overflow-hidden">
+    <div id="carousel-container" className="mx-auto w-full max-w-[382px] overflow-hidden md:w-[382px]">
       <div
-        className="flex gap-[23px] transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${current * STEP}px)` }}
+        className="flex gap-[23px] transition-transform duration-500 ease-out"
+        style={{ transform: `translateX(-${current * step}px)` }}
       >
         {slides.map((slide) => (
           <img
             key={slide.alt}
             src={slide.src}
             alt={slide.alt}
-            className="h-[255px] w-[382px] shrink-0 rounded-lg object-cover"
+            className="h-auto w-full shrink-0 rounded-lg object-cover md:h-[255px] md:w-[382px]"
+            style={{ aspectRatio: slideWidth ? "382 / 255" : "auto" }}
           />
         ))}
       </div>

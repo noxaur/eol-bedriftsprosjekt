@@ -2,7 +2,9 @@
 
 import { motion } from "motion/react";
 
-const stats = [
+const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+const entries = [
   { value: "99.99%", label: "Uptime SLA" },
   { value: "500+", label: "Deployments per month" },
   { value: "10+", label: "Years of operation" },
@@ -19,25 +21,20 @@ export default function Stats() {
       }}
     >
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-2 gap-12 md:grid-cols-4">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-center"
-            >
-              <div
-                className="text-4xl font-bold tracking-tight md:text-5xl"
-                style={{ color: "var(--color-brand)" }}
-              >
-                {stat.value}
-              </div>
-              <div className="mt-2 text-sm text-text-muted">{stat.label}</div>
-            </motion.div>
-          ))}
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-lg leading-relaxed text-text-inverse/70">
+            We maintain{" "}
+            {entries.map((e, i) => (
+              <span key={e.label}>
+                <strong className="font-semibold" style={{ color: "var(--color-brand)" }}>
+                  {e.value}
+                </strong>{" "}
+                {e.label.toLowerCase()}
+                {i < entries.length - 2 ? ", " : i === entries.length - 2 ? " and " : ""}
+              </span>
+            ))}
+            . Reliability isn&apos;t a promise — it&apos;s what we measure every day.
+          </p>
         </div>
       </div>
     </section>

@@ -2,9 +2,11 @@
 
 import { motion } from "motion/react";
 
+const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export default function FinalCTA() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-white py-24">
+    <section id="contact" className="relative overflow-hidden py-24" style={{ backgroundColor: "var(--color-surface)" }}>
       <div className="absolute inset-0 bg-gradient-to-br from-brand-subtle/60 via-transparent to-brand-subtle/30" />
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
@@ -12,7 +14,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.5, ease: easeOut }}
         >
           <h2 className="text-3xl font-bold tracking-tight text-text-primary md:text-4xl">
             Ready to modernize?

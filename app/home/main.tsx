@@ -5,6 +5,7 @@ import FeatureGrid from "./components/feature-grid";
 import Stats from "./components/stats";
 import HowItWorks from "./components/how-it-works";
 import Testimonial from "./components/testimonial";
+import Faq from "./components/faq";
 import FinalCTA from "./components/final-cta";
 import Footer from "./components/footer";
 
@@ -19,6 +20,7 @@ function LandingPage() {
         <Stats />
         <HowItWorks />
         <Testimonial />
+        <Faq />
         <FinalCTA />
       </main>
       <Footer />

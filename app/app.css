@@ -5,26 +5,24 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-heading: "DM Serif Display", serif;
   --font-logo: "Special Gothic Expanded One", sans-serif;
-  --font-body: "Roboto", sans-serif;
-  --font-heading-condensed: "Roboto Condensed", sans-serif;
 
-  --color-brand: #39B54A;
-  --color-brand-hover: #2B8838;
-  --color-brand-subtle: #F0FAF2;
-  --color-brand-dark: #143F1A;
+  --color-brand: oklch(63% 0.175 145);
+  --color-brand-hover: oklch(55% 0.16 145);
+  --color-brand-subtle: oklch(96% 0.012 145);
+  --color-brand-dark: oklch(25% 0.04 145);
 
-  --color-surface: #FAFAFA;
-  --color-surface-dark: #0C0E0C;
-  --color-border: #E8E8E8;
-  --color-border-hover: #D4D4D4;
+  --color-surface: oklch(98.5% 0.003 145);
+  --color-surface-dark: oklch(12% 0.004 145);
+  --color-border: oklch(90% 0.005 145);
+  --color-border-hover: oklch(83% 0.006 145);
 
-  --color-text-primary: #111111;
-  --color-text-secondary: #555555;
-  --color-text-muted: #737373;
-  --color-text-inverse: #FAFAFA;
+  --color-text-primary: oklch(15% 0.004 145);
+  --color-text-secondary: oklch(42% 0.006 145);
+  --color-text-muted: oklch(55% 0.006 145);
+  --color-text-inverse: oklch(98.5% 0.003 145);
 
-  --color-dark-surface: #161816;
-  --color-dark-border: #2A2D2A;
+  --color-dark-surface: oklch(17% 0.004 145);
+  --color-dark-border: oklch(25% 0.005 145);
 }
 
 @layer base {
@@ -36,7 +34,7 @@
 
   html,
   body {
-    @apply bg-white;
+    background-color: var(--color-surface);
     color: var(--color-text-primary);
   }
 }
@@ -73,17 +71,27 @@
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out both;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-fade-in-up-delay-1 {
-  animation: fade-in-up 0.6s ease-out 0.1s both;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .animate-fade-in-up-delay-2 {
-  animation: fade-in-up 0.6s ease-out 0.2s both;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 .animate-fade-in-up-delay-3 {
-  animation: fade-in-up 0.6s ease-out 0.3s both;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-fade-in-up,
+  .animate-fade-in-up-delay-1,
+  .animate-fade-in-up-delay-2,
+  .animate-fade-in-up-delay-3 {
+    animation: none;
+  }
 }

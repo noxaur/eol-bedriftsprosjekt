@@ -2,18 +2,21 @@
 
 import { motion } from "motion/react";
 
+const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export default function Testimonial() {
   return (
     <section
       id="testimonials"
-      className="border-y border-border bg-surface py-24"
+      className="border-y border-border py-24"
+      style={{ backgroundColor: "var(--color-surface)" }}
     >
       <div className="mx-auto max-w-4xl px-6">
         <motion.blockquote
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.5, ease: easeOut }}
           className="text-center"
         >
           <p className="text-balance text-2xl font-medium leading-relaxed text-text-primary md:text-3xl">

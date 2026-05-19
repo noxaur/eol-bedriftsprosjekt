@@ -1,6 +1,6 @@
 export default function LogoBar() {
   return (
-    <section className="border-y border-border bg-white py-12">
+    <section className="border-y border-border py-12" style={{ backgroundColor: "var(--color-surface)" }}>
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-text-muted">
           Trusted by industry leaders

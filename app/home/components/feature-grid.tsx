@@ -35,9 +35,11 @@ const features = [
   },
 ];
 
+const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export default function FeatureGrid() {
   return (
-    <section id="features" className="bg-surface py-24">
+    <section id="features" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-text-primary md:text-4xl">
@@ -48,27 +50,34 @@ export default function FeatureGrid() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="group rounded-xl border border-border bg-white p-8 transition-all hover:border-border-hover hover:shadow-lg hover:shadow-black/5"
-            >
-              <div className="mb-5 inline-flex rounded-lg bg-brand-subtle p-2.5 text-brand">
-                {feature.icon}
-              </div>
-              <h3 className="mb-3 text-lg font-semibold text-text-primary">
-                {feature.title}
-              </h3>
-              <p className="leading-relaxed text-text-secondary">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+        <div className="grid gap-8 md:grid-cols-6">
+          {features.map((feature, index) => {
+            const isPrimary = index === 0;
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: easeOut }}
+                className={
+                  isPrimary
+                    ? "md:col-span-6 rounded-xl border border-border bg-surface p-8 md:p-10"
+                    : "md:col-span-3 rounded-xl border border-border bg-surface p-8"
+                }
+              >
+                <div className={`mb-5 inline-flex rounded-lg text-brand ${isPrimary ? "bg-brand-subtle p-3" : "bg-brand-subtle p-2.5"}`}>
+                  {feature.icon}
+                </div>
+                <h3 className={`mb-3 font-semibold text-text-primary ${isPrimary ? "text-xl" : "text-lg"}`}>
+                  {feature.title}
+                </h3>
+                <p className={`leading-relaxed text-text-secondary ${isPrimary ? "text-base" : "text-sm"}`}>
+                  {feature.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

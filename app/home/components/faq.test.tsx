@@ -8,10 +8,10 @@ describe("Faq", () => {
     expect(screen.getByText("Frequently asked questions")).toBeInTheDocument();
   });
 
-  it("renders the body text", () => {
+  it("renders FAQ items", () => {
     render(<Faq />);
-    expect(
-      screen.getByText(/daskjdaksdabsdkbajsdaas/),
-    ).toBeInTheDocument();
+    expect(screen.getByText("What does EOL cover?")).toBeInTheDocument();
+    expect(screen.getByText("How long does onboarding take?")).toBeInTheDocument();
+    expect(screen.getByText("Can you work with our existing team?")).toBeInTheDocument();
   });
 });

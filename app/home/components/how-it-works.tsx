@@ -20,9 +20,11 @@ const steps = [
   },
 ];
 
+const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-white py-24">
+    <section id="how-it-works" className="py-24" style={{ backgroundColor: "var(--color-surface)" }}>
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-text-primary md:text-4xl">
@@ -40,7 +42,7 @@ export default function HowItWorks() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.4, delay: index * 0.15, ease: easeOut }}
               className="relative"
             >
               {index < steps.length - 1 && (

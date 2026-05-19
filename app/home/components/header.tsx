@@ -4,7 +4,7 @@ interface HeaderProps {
 
 export default function Header({ onMenuToggle }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-[10px] py-[2px] bg-white">
+    <header className="flex items-center justify-between px-[10px] py-[2px] bg-surface">
       <div className="flex items-center gap-[6.71px]">
         <div className="relative" style={{ width: 51, height: 67.11 }}>
           <img
