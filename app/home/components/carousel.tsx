@@ -32,7 +32,7 @@ export default function Carousel() {
         </div>
         <div className="retro-box-inset overflow-hidden">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
+            className="carousel-track flex"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {slides.map((slide) => (

@@ -28,7 +28,7 @@ describe("Carousel", () => {
 
   it("applies transition to the inner track for auto-swap", () => {
     const { container } = render(<Carousel />);
-    const innerTrack = container.querySelector('.transition-transform');
+    const innerTrack = container.querySelector('.carousel-track');
     expect(innerTrack).toBeTruthy();
   });
 });

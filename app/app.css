@@ -24,14 +24,18 @@
   --color-font-dark: #0A0A0A;
   --color-font-muted: #333344;
 
-  --color-retro-blue: #0000CC;
-  --color-retro-red: #CC0000;
-  --color-retro-yellow: #FFCC00;
-  --color-retro-bg: #E8E8F0;
-  --color-retro-border: #0A0A0A;
-  --color-retro-white: #F5F5FA;
-  --color-retro-link: #0000EE;
-  --color-retro-visited: #551A8B;
+  --color-retro-blue: oklch(0.37 0.20 265);
+  --color-retro-red: oklch(0.45 0.22 30);
+  --color-retro-yellow: oklch(0.85 0.16 85);
+  --color-retro-bg: oklch(0.92 0.004 265);
+  --color-retro-border: oklch(0.12 0.006 265);
+  --color-retro-white: oklch(0.97 0.003 265);
+  --color-retro-link: oklch(0.35 0.18 265);
+  --color-retro-visited: oklch(0.30 0.12 300);
+
+  --color-retro-shadow: oklch(0.25 0.008 265);
+  --color-retro-bevel-light: oklch(0.88 0.005 265);
+  --color-retro-bevel-dark: oklch(0.40 0.008 265);
 }
 
 @layer base {
@@ -47,7 +51,21 @@
 
   @media (prefers-color-scheme: dark) {
     html {
-      color-scheme: light;
+      color-scheme: dark;
+    }
+
+    html,
+    body {
+      background: oklch(0.15 0.008 265);
+      color: oklch(0.85 0.005 265);
+    }
+
+    a {
+      color: oklch(0.60 0.14 265);
+    }
+
+    a:visited {
+      color: oklch(0.50 0.10 300);
     }
   }
 
@@ -77,11 +95,35 @@
 
   .retro-box-inset {
     border: 2px solid var(--color-retro-border);
-    border-top-color: #555;
-    border-left-color: #555;
-    border-bottom-color: #CCC;
-    border-right-color: #CCC;
+    border-top-color: var(--color-retro-bevel-dark);
+    border-left-color: var(--color-retro-bevel-dark);
+    border-bottom-color: var(--color-retro-bevel-light);
+    border-right-color: var(--color-retro-bevel-light);
     background: var(--color-retro-bg);
+  }
+
+  .retro-btn-base {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: bold;
+    padding: 6px 16px;
+    border: 2px solid var(--color-retro-border);
+    border-top-color: var(--color-retro-bevel-light);
+    border-left-color: var(--color-retro-bevel-light);
+    border-bottom-color: var(--color-retro-bevel-dark);
+    border-right-color: var(--color-retro-bevel-dark);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .retro-btn-base:active {
+    border-top-color: var(--color-retro-bevel-dark);
+    border-left-color: var(--color-retro-bevel-dark);
+    border-bottom-color: var(--color-retro-bevel-light);
+    border-right-color: var(--color-retro-bevel-light);
   }
 
   .retro-btn-primary {
@@ -93,21 +135,33 @@
     font-weight: bold;
     padding: 6px 16px;
     border: 2px solid var(--color-retro-border);
-    border-top-color: #CCC;
-    border-left-color: #CCC;
-    border-bottom-color: #555;
-    border-right-color: #555;
+    border-top-color: var(--color-retro-bevel-light);
+    border-left-color: var(--color-retro-bevel-light);
+    border-bottom-color: var(--color-retro-bevel-dark);
+    border-right-color: var(--color-retro-bevel-dark);
     background: var(--color-retro-blue);
-    color: #F5F5FA;
+    color: var(--color-retro-white);
     cursor: pointer;
     text-decoration: none;
   }
 
   .retro-btn-primary:active {
-    border-top-color: #555;
-    border-left-color: #555;
-    border-bottom-color: #CCC;
-    border-right-color: #CCC;
+    border-top-color: var(--color-retro-bevel-dark);
+    border-left-color: var(--color-retro-bevel-dark);
+    border-bottom-color: var(--color-retro-bevel-light);
+    border-right-color: var(--color-retro-bevel-light);
+  }
+
+    .retro-btn-primary:focus-visible,
+  .retro-btn-secondary:focus-visible,
+  .retro-btn-outline:focus-visible {
+    outline: 2px solid var(--color-retro-blue);
+    outline-offset: 2px;
+  }
+
+  .retro-box button:focus-visible {
+    outline: 2px solid var(--color-retro-blue);
+    outline-offset: 2px;
   }
 
   .retro-btn-secondary {
@@ -119,21 +173,21 @@
     font-weight: bold;
     padding: 6px 16px;
     border: 2px solid var(--color-retro-border);
-    border-top-color: #CCC;
-    border-left-color: #CCC;
-    border-bottom-color: #555;
-    border-right-color: #555;
+    border-top-color: var(--color-retro-bevel-light);
+    border-left-color: var(--color-retro-bevel-light);
+    border-bottom-color: var(--color-retro-bevel-dark);
+    border-right-color: var(--color-retro-bevel-dark);
     background: var(--color-retro-red);
-    color: #F5F5FA;
+    color: var(--color-retro-white);
     cursor: pointer;
     text-decoration: none;
   }
 
   .retro-btn-secondary:active {
-    border-top-color: #555;
-    border-left-color: #555;
-    border-bottom-color: #CCC;
-    border-right-color: #CCC;
+    border-top-color: var(--color-retro-bevel-dark);
+    border-left-color: var(--color-retro-bevel-dark);
+    border-bottom-color: var(--color-retro-bevel-light);
+    border-right-color: var(--color-retro-bevel-light);
   }
 
   .retro-btn-outline {
@@ -145,10 +199,10 @@
     font-weight: bold;
     padding: 6px 16px;
     border: 2px solid var(--color-retro-border);
-    border-top-color: #CCC;
-    border-left-color: #CCC;
-    border-bottom-color: #555;
-    border-right-color: #555;
+    border-top-color: var(--color-retro-bevel-light);
+    border-left-color: var(--color-retro-bevel-light);
+    border-bottom-color: var(--color-retro-bevel-dark);
+    border-right-color: var(--color-retro-bevel-dark);
     background: var(--color-retro-white);
     color: var(--color-font-dark);
     cursor: pointer;
@@ -156,10 +210,10 @@
   }
 
   .retro-btn-outline:active {
-    border-top-color: #555;
-    border-left-color: #555;
-    border-bottom-color: #CCC;
-    border-right-color: #CCC;
+    border-top-color: var(--color-retro-bevel-dark);
+    border-left-color: var(--color-retro-bevel-dark);
+    border-bottom-color: var(--color-retro-bevel-light);
+    border-right-color: var(--color-retro-bevel-light);
   }
 
   .retro-badge {
@@ -169,10 +223,10 @@
     font-weight: bold;
     padding: 3px 8px;
     border: 2px solid var(--color-retro-border);
-    border-top-color: #CCC;
-    border-left-color: #CCC;
-    border-bottom-color: #555;
-    border-right-color: #555;
+    border-top-color: var(--color-retro-bevel-light);
+    border-left-color: var(--color-retro-bevel-light);
+    border-bottom-color: var(--color-retro-bevel-dark);
+    border-right-color: var(--color-retro-bevel-dark);
     background: var(--color-retro-yellow);
     color: var(--color-font-dark);
     text-transform: uppercase;
@@ -193,7 +247,7 @@
 
   .retro-table th {
     background: var(--color-retro-blue);
-    color: #F5F5FA;
+    color: var(--color-retro-white);
     font-weight: bold;
     text-transform: uppercase;
     font-size: var(--text-xs);
@@ -213,10 +267,10 @@
 
   .retro-marquee-bar {
     border: 2px solid var(--color-retro-border);
-    border-top-color: #555;
-    border-left-color: #555;
-    border-bottom-color: #CCC;
-    border-right-color: #CCC;
+    border-top-color: var(--color-retro-bevel-dark);
+    border-left-color: var(--color-retro-bevel-dark);
+    border-bottom-color: var(--color-retro-bevel-light);
+    border-right-color: var(--color-retro-bevel-light);
     background: var(--color-retro-white);
     overflow: hidden;
     padding: 4px 0;
@@ -237,6 +291,11 @@
   will-change: transform;
 }
 
+.animate-marquee:hover,
+.animate-marquee:focus-within {
+  animation-play-state: paused;
+}
+
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
@@ -253,4 +312,20 @@
 
 .animate-sparkle {
   animation: sparkle 0.8s ease-in-out infinite;
+}
+
+.carousel-track {
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-blink,
+  .animate-sparkle {
+    animation: none;
+  }
+
+  .carousel-track {
+    transition: none;
+  }
 }
